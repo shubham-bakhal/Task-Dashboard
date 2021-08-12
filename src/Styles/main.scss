@@ -1,0 +1,47 @@
+@import './variables/variables';
+
+#main {
+  padding: 15px 45px;
+  .mainHeader {
+    display: flex;
+    justify-content: space-between;
+    img {
+      width: 30px;
+    }
+    .left {
+      div {
+        display: flex;
+        align-items: center;
+        margin: 20px 0px;
+        img {
+          margin-right: 15px;
+        }
+      }
+      p {
+        color: $light-grey;
+        font-size: 14px;
+        line-height: 25px;
+      }
+    }
+    .right {
+      margin: 10px 0px;
+      img {
+        margin-right: 15px;
+        height: 35px;
+        width: 35px;
+      }
+    }
+  }
+  .maincards {
+    .Progress {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 10px;
+    }
+  }
+}
