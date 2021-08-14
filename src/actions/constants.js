@@ -7,5 +7,5 @@ export const taskConstants = {
   MOVE_FROM_PROGRESS_TO_COMPLETE: "MOVE_FROM_PROGRESS_TO_COMPLETE",
 };
 export const chatConstants = {
-  
+  NEW_MSG: "NEW_MSG"
 };

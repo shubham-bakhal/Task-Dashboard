@@ -4,7 +4,6 @@ import dailytask from '../assets/dailytask.png';
 import search from '../assets/search.svg';
 import notification from '../assets/notification.svg';
 import { useSelector } from 'react-redux';
-import profile from '../assets/profile.png';
 import Column from './Column';
 
 const Main = () => {

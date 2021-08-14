@@ -1,0 +1,17 @@
+@import './variables/variables';
+
+.audiomsg{
+    display: grid;
+    grid-template-columns: 1fr 4fr 0fr;
+    align-items: center;
+
+    button{
+        border: none;
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        img{
+            width: 40px;
+        }
+    }
+}

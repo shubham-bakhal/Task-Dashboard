@@ -1,38 +1,86 @@
 @import './variables/variables';
 
-#chatcontent {
+.chat__item {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+  transform: scale(0);
+  transform-origin: right;
+  animation-name: showIn;
+  animation-duration: 0.2s; /* or: Xms */
+  animation-iteration-count: 1;
+  animation-direction: normal; /* or: normal */
+  animation-timing-function: cubic-bezier(
+    0.88,
+    0.19,
+    0.37,
+    1.11
+  ); /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+  animation-fill-mode: both; /* or: backwards, both, none */
+  animation-delay: 0.2s; /* or: Xms */
+}
+@keyframes showIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.chat__item .avatar {
+  margin-right: 0px;
+  margin-left: 10px;
+  padding: 1px;
+  width: 30px;
+  height: 30px;
+}
+.chat__item__content {
+  background-color: #4462ff;
   div {
-    display: flex;
-    position: relative;
-    .posdown {
-      margin-right: 30px;
-      img {
-        position: absolute;
-        bottom: 0px;
-        border-radius: 50%;
-        width: 25px;
-        height: 25px;
-        object-fit: cover;
-      }
-    }
+    color: white;
+  }
+  padding: 10px;
+  border-radius: 10px 10px 0 10px;
+}
 
-    .msg {
-      background-color: $primary-light;
-      padding: 15px;
-      max-width: 250px;
-      border-radius: 8px 8px 8px 0px;
-      p {
-        font-size: 14px;
-        font-weight: 500;
-        margin: 0;
-      }
-    }
+.chat__meta{
+  margin-bottom: 10px;
+}
+.chat__meta span {
+  font-size: 12px;
+  color: $light-grey;
+  user-select: none;
+
+}
+.chat__meta.other{
+  margin-left: 40px;
+}
+.chat__meta.me{
+  text-align: right;
+  margin-right: 40px;
+}
+
+.chat__msg {
+  user-select: none;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.chat__item.other {
+  flex-direction: row-reverse;
+  transform-origin: left;
+  div {
+    color: $font-color;
   }
-  span {
-    display: block;
-    font-size: 12px;
-    color: $light-grey;
-    margin-left: 40px;
-    margin-bottom: 15px;
-  }
+}
+.chat__item.other .chat__item__content {
+  background-color: $primary-light;
+  border-radius: 10px 10px 10px 0;
+  max-width: 70%;
+}
+.chat__item.other .avatar {
+  margin-right: 10px;
+  margin-left: 0px;
 }

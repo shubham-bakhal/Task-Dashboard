@@ -1,20 +1,24 @@
 import React from 'react';
 import '../Styles/css/chatcontent.css';
+import Avatar from './Avatar';
+import WaveSurferComponent from './WaveSurferComponent';
 
-const ChatContent = ({ image, msg , isCurrUser}) => {
-  console.log(isCurrUser);
+const ChatContent = ({ image, msg, isCurrUser, aud }) => {
   return (
-    <div id="chatcontent">
-      <div>
-        <div className="posdown">
-          <img src={image} alt="" />
+    <div>
+      <div className={`chat__item ${isCurrUser ? 'me' : 'other'}`}>
+        <div className="chat__item__content">
+          {msg ? (
+            <div className="chat__msg">{msg}</div>
+          ) : (
+            <WaveSurferComponent aud= {aud} />
+          )}
         </div>
-
-        <div className="msg">
-          <p>{msg}</p>
-        </div>
+        <Avatar isOnline="active" image={image} />
       </div>
-      <span>08:00 AM</span>
+      <div className={`chat__meta ${isCurrUser ? 'me' : 'other'}`}>
+        <span>08:00 AM</span>
+      </div>
     </div>
   );
 };

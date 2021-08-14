@@ -79,38 +79,30 @@ const chatinitState = {
     },
     {
       id: 6,
-      msg: '',
-      audiourl: '',
+      audiourl: 'https://pagalsong.in/uploads/systemuploads/mp3/Bell%20Bottom/Sakhiyan%202.0%20-%20Bell%20Bottom%20128%20Kbps.mp3',
       userId: 1,
       time: '8:00 AM',
       seen: true,
     },
-    {
-      id: 7,
-      msg: 'delete',
-      userId: 5,
-      time: '8:00 AM',
-      seen: true,
-    },
+    
   ],
 };
 
 const chatReducres = (state = chatinitState, action) => {
   switch (action.type) {
-    // case taskConstants.MOVE_FROM_COMPLETE_TO_PROGRESS:
-    //   const appendobjtoprocess1 = state.completeList.filter(
-    //     task => task.id === action.payload.obj.id
-    //   );
-    //   appendobjtoprocess1[0].type = 'progress';
-    //   const removedcompete1 = state.completeList.filter(
-    //     task => task.id !== action.payload.obj.id
-    //   );
-    //   state = {
-    //     ...state,
-    //     completeList: removedcompete1,
-    //     progressList: [...state.progressList, ...appendobjtoprocess1],
-    //   };
-    //   break;
+    case chatConstants.NEW_MSG:
+      const newMsg = {
+        id:state.chats.length + 1,
+        msg: action.payload.msg,
+        userId: state.currentUserID,
+        time: '8:00 AM',
+        seen: false,
+      }
+      state = {
+        ...state,
+        chats: [...state.chats, newMsg],
+      };
+      break;
 
     default:
       return state;
