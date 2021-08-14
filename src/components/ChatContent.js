@@ -11,7 +11,7 @@ const ChatContent = ({ image, msg, isCurrUser, aud }) => {
           {msg ? (
             <div className="chat__msg">{msg}</div>
           ) : (
-            <WaveSurferComponent aud= {aud} />
+            <WaveSurferComponent aud = {aud} />
           )}
         </div>
         <Avatar isOnline="active" image={image} />
