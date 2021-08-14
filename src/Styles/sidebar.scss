@@ -16,9 +16,11 @@
   font-size: small;
   background-color: white;
   padding: 12px 6px;
-  border-radius: 10px;
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  // box-shadow: 0px 4px 10px -3px rgba(0, 0, 0, 0.1),
+  //   0px 2px 4px -2px rgba(0, 0, 0, 0.05);
+  // box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   #logoimg {
     border-radius: 50%;
     margin-right: 15px;
@@ -60,7 +62,7 @@
 
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
+    // margin-bottom: 5px;
     p {
       font-weight: 600;
       font-size: 12px;
@@ -74,21 +76,21 @@
     .emoji {
       width: 15px;
       height: 15px;
-      margin-left: 10px;
+      margin-left: 5px;
     }
     &:hover {
       background-color: white;
       border-radius: 6px;
       cursor: pointer;
-      box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
-        0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+      box-shadow: 0px 4px 10px -3px rgba(0, 0, 0, 0.1),
+        0px 2px 4px -2px rgba(0, 0, 0, 0.05);
     }
   }
 }
 
 #newProject {
   position: absolute;
-  bottom: 50px;
+  bottom: 40px;
   margin-left: 10px;
   button {
     display: flex;
@@ -96,7 +98,7 @@
     outline: 0;
     border: none;
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: 4px;
     height: 40px;
     background-color: $primary-color;
     padding: 10px 15px;

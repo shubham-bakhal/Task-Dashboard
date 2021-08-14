@@ -1,0 +1,46 @@
+@import './variables/variables';
+
+.column {
+  .progress {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    .bigbox {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $primary-light;
+      padding: 5px 10px;
+      border-radius: 4px;
+      .smallbox {
+        background-color: $font-color;
+        padding: 5px;
+        border-radius: 4px;
+        min-width: 20px;
+        text-align: center;
+        p {
+          color: white;
+          font-size: 10px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .cards {
+    margin-bottom: 15px;
+  }
+  .new {
+    text-align: center;
+    padding: 5px;
+    color: $light-grey;
+  }
+  .dashedBorder {
+    border-radius: 5px;
+    border: 1px dashed $light-grey;
+  }
+  .emptybox {
+    height: 155px;
+    margin-bottom: 15px;
+  }
+}
