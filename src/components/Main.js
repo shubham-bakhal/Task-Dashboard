@@ -8,7 +8,7 @@ import Column from './Column';
 
 const Main = () => {
   const tasks = useSelector(state => state.tasks);
-  const chats = useSelector(state => state.chats)
+  const chats = useSelector(state => state.chats);
   return (
     <div id="main">
       <div className="mainHeader">
@@ -25,8 +25,15 @@ const Main = () => {
         </div>
         <div className="right">
           <img src={search} alt="" />
-          <img src={notification} alt="" />
-          <img src={chats.groupUser[chats.currentUserID -1].profileurl} alt="" />
+          <div>
+            <img src={notification} alt="" />
+            <span className="count">3</span>
+          </div>
+
+          <img
+            src={chats.groupUser[chats.currentUserID - 1].profileurl}
+            alt=""
+          />
         </div>
       </div>
       <div className="maincards">

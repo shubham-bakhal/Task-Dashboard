@@ -36,11 +36,29 @@
     }
     .right {
       margin: 20px 0px;
+      display: flex;
       img {
         margin-right: 15px;
         height: 35px;
         width: 35px;
         border-radius: 50%;
+      }
+      div {
+        position: relative;
+        .count {
+          position: absolute;
+          padding: auto;
+          text-align: center;
+          width: 20px;
+          height: 20px;
+          right: 12px;
+          top: -5px;
+          font-size: 10px;
+          color: white;
+          background-color: #FD3534;
+          border-radius: 50%;
+          border: 2px solid #fff;
+        }
       }
     }
   }
@@ -51,4 +69,3 @@
     grid-gap: 20px;
   }
 }
-

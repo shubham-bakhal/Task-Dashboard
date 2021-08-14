@@ -12,10 +12,10 @@ import profile3 from '../assets/profile3.png';
 import '../Styles/css/card.css';
 
 import { useDrag } from 'react-dnd';
+import { useSelector } from 'react-redux';
 
 const Card = ({ task }) => {
   var emoji;
-
   switch (task.emoji) {
     case 'fire':
       emoji = fire;
@@ -41,13 +41,16 @@ const Card = ({ task }) => {
     }),
   });
 
-var classs ="card";
-  if(isDragging){
-    classs = 'card remOpacity dashedBorder'
+  var classs = 'card';
+  if (isDragging) {
+    classs = 'card remOpacity dashedBorder';
   }
 
+  const chats = useSelector(state => state.chats);
+  console.log(chats.groupUser[1].profileurl);
+
   return (
-    <div className={classs} ref={dragRef} >
+    <div className={classs} ref={dragRef}>
       <div className="cardheader">
         <img src={emoji} alt="" />
         <img src={more} alt="more" />
@@ -61,9 +64,17 @@ var classs ="card";
           <p>{task.date}</p>
         </div>
         <div className="people">
-          <img src={profile1} alt="dp" />
-          <img src={profile2} alt="dp" />
-          <img src={profile3} alt="dp" />
+          {task.userIDs.map(id => {
+            return <span className="avatar">
+            <img key={id} src={chats.groupUser[parseInt(id) - 1].profileurl} alt="dp" />
+            </span> ;
+          })}
+          {/* {task.userIDs.map(id => {
+            return <p>{parseInt}</p>;
+          })} */}
+
+          {/* <img src={profile2} alt="dp" />
+          <img src={profile3} alt="dp" /> */}
         </div>
       </div>
     </div>
