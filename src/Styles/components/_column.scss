@@ -1,14 +1,10 @@
-@import './variables/variables';
-
 .column {
   .progress {
-    font-size: 13px;
+    font-size: $font-sm-md;
     font-weight: 600;
     margin-bottom: 15px;
     .bigbox {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @include flexing;
       background-color: $primary-light;
       padding: 5px 10px;
       border-radius: 4px;
@@ -20,7 +16,7 @@
         text-align: center;
         p {
           color: white;
-          font-size: 10px;
+          font-size: $font-sm;
           font-weight: 600;
         }
       }

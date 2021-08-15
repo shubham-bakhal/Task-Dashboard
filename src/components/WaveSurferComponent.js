@@ -1,9 +1,7 @@
 import React from 'react';
 import playbtn from '../assets/playbtn.svg';
-import MySong from '../assets/abc.mp3'
 import WaveSurfer from 'wavesurfer.js';
 import RegionsPlugin from 'wavesurfer.js/dist/plugin/wavesurfer.regions.min.js';
-import '../Styles/css/wavesufercomponent.css';
 
 class WaveSurferComponent extends React.Component {
   state = {
@@ -15,15 +13,16 @@ class WaveSurferComponent extends React.Component {
   componentDidMount() {
     const aud = document.querySelector('#song');
     this.wavesurfer = WaveSurfer.create({
-      barWidth: 1,
+      barWidth: 1.5,
       cursorWidth: 0,
       container: '#waveform',
       backend: 'MediaElement',
       height: 50,
-      progressColor: '#4a74a5',
+      progressColor: '#2D4ACD',
       responsive: true,
-      waveColor: '#ccc',
-      cursorColor: '#4a74a5',
+      waveColor: '#D9E0EF',
+      barGap: 2,
+      barRadius: 1,
       plugins: [
         RegionsPlugin.create({
           regions: this.state.regions,
@@ -42,6 +41,11 @@ class WaveSurferComponent extends React.Component {
     this.wavesurfer.on('region-created', (region, e) => {
       this.wavesurfer.clearRegions();
       this.setState({ regions: region });
+    });
+
+    this.wavesurfer.on('audioprocess', function (currTime) {
+      var currentTime = currTime / 60;
+      document.getElementById('tracktime').innerText = currentTime.toFixed(2);
     });
   }
 
@@ -66,11 +70,8 @@ class WaveSurferComponent extends React.Component {
 
         <div id="waveform" />
 
-        <audio
-          id="song"
-          src={MySong}
-          // src="https://reelcrafter-east.s3.amazonaws.com/aux/test.m4a"
-        />
+        <audio id="song" src={this.props.aud} />
+        <span id="tracktime">0:00</span>
       </div>
     );
   }

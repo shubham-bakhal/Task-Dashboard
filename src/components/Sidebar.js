@@ -13,7 +13,6 @@ import Archive from '../assets/Archive.png';
 import brainstroming from '../assets/brainstroming.png';
 import play_arrow from '../assets/play_arrow.svg';
 import plus from '../assets/plus.svg';
-import '../Styles/css/sidebar.css';
 import SidebarCategories from './SidebarCategories';
 
 const Sidebar = () => {
@@ -73,7 +72,6 @@ const Sidebar = () => {
       </div>
       <div id="newProject">
         <button>
-          {' '}
           <img src={plus} alt="" /> <p>New Project</p>{' '}
         </button>
       </div>

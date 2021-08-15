@@ -1,5 +1,3 @@
-@import './variables/variables';
-
 #main {
   padding: 15px 45px;
   border-right: 2px solid $primary-light;
@@ -7,8 +5,8 @@
   height: 100vh;
   overflow: auto;
   .mainHeader {
-    display: flex;
-    justify-content: space-between;
+    @include flexing;
+    align-items: flex-start;
     margin-bottom: 20px;
     img {
       width: 30px;
@@ -24,7 +22,7 @@
       }
       p {
         color: $light-grey;
-        font-size: 14px;
+        font-size: $font-md;
         line-height: 25px;
         .highlight {
           background-color: $primary-light;
@@ -53,9 +51,9 @@
           height: 20px;
           right: 12px;
           top: -5px;
-          font-size: 10px;
+          font-size: $font-sm;
           color: white;
-          background-color: #FD3534;
+          background-color: $red;
           border-radius: 50%;
           border: 2px solid #fff;
         }

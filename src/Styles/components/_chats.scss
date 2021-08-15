@@ -1,16 +1,12 @@
-@import './variables/variables';
-
 #chats {
-  padding: 15px 25px;
+  display: grid;
+  grid-template-rows: 1fr 5fr 0.5fr;
+  padding: 15px 10px;
   margin-top: 20px;
-  position: relative;
-
   .chatsHeader {
     .info {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 15px;
+      @include flexing;
+      font-size: $font-md-lg;
       margin-bottom: 20px;
       p {
         font-weight: 600;
@@ -19,36 +15,35 @@
         }
       }
       span {
-        font-size: 14px;
+        font-size: $font-md;
         cursor: pointer;
         color: $light-grey;
       }
     }
     .images {
-      display: flex;
-      justify-content: space-between;
+      @include flexing;
       border-radius: 50%;
-      margin-bottom: 20px;
+
+      // margin-bottom: 20px;
     }
   }
   .groupChat {
     p {
-      font-size: 15px;
+      font-size: $font-md-lg;
       font-weight: 600;
       margin-bottom: 10px;
     }
     .allChats {
       scrollbar-width: thin;
       height: 65vh;
-      // height: inherit;
       overflow-y: scroll;
     }
   }
   .inputs {
-    position: fixed;
-    bottom: 40px;
     display: flex;
-
+    width: 100%;
+    align-self: end;
+    margin-bottom: 20px;
     input {
       padding: 10px;
       border: none;
@@ -57,10 +52,13 @@
       color: $light-grey;
       font-weight: 500;
       outline: none;
-      width: 279px;
+      width: 80%;
+      margin-right: 5px;
     }
-    img{
+    img {
       cursor: pointer;
+      width: 24px;
+      margin-right: 5px;
     }
   }
 }

@@ -1,0 +1,33 @@
+@import './components/app';
+@import './components/avatar';
+@import './components/card';
+@import './components/chats';
+@import './components/chatcontent';
+@import './components/column';
+@import './components/main';
+@import './components/sidebar';
+@import './components/wavesufercomponent';
+
+@media screen and (max-width: 1456px) {
+  @include Button;
+}
+
+@media screen and (max-width: 1360px) {
+  @include cardFooter;
+}
+
+@media screen and (max-width: 1232px) {
+  @include mainGrid;
+  @include avatarDim;
+}
+
+@media screen and (max-width: 1196px) {
+  // in sidebar scss
+  @include hideSidebar;
+  // in app.scss using grid
+  @include sideBarHidden;
+  @include cardImg;
+}
+@media screen and (min-width: 1648px) {
+  @include fontSizes;
+}

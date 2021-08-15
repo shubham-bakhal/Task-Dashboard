@@ -79,12 +79,11 @@ const chatinitState = {
     },
     {
       id: 6,
-      audiourl: 'https://pagalsong.in/uploads/systemuploads/mp3/Bell%20Bottom/Sakhiyan%202.0%20-%20Bell%20Bottom%20128%20Kbps.mp3',
+      audiourl:'https://reelcrafter-east.s3.amazonaws.com/aux/test.m4a',
       userId: 1,
       time: '8:00 AM',
       seen: true,
     },
-    
   ],
 };
 
@@ -92,12 +91,12 @@ const chatReducres = (state = chatinitState, action) => {
   switch (action.type) {
     case chatConstants.NEW_MSG:
       const newMsg = {
-        id:state.chats.length + 1,
+        id: state.chats.length + 1,
         msg: action.payload.msg,
         userId: state.currentUserID,
         time: '8:00 AM',
         seen: false,
-      }
+      };
       state = {
         ...state,
         chats: [...state.chats, newMsg],

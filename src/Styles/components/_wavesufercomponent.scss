@@ -1,0 +1,23 @@
+.audiomsg {
+  display: grid;
+  grid-template-columns: 1fr 4fr 0fr;
+  align-items: center;
+  #waveform {
+    overflow: hidden;
+  }
+  button {
+    border: none;
+    @include flexing;
+    margin-right: 10px;
+    cursor: pointer;
+    img {
+      width: 40px;
+    }
+  }
+
+  #tracktime {
+    margin-left: 10px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+}

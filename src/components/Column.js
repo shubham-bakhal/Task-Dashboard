@@ -1,11 +1,14 @@
 import React from 'react';
-import '../Styles/css/column.css';
 import Card from './Card';
 import { ItemTypes } from '../utils/item';
 
 import { useDrop } from 'react-dnd';
 import { useDispatch } from 'react-redux';
-import { movefromcompleted, movefromnextup, movefromprogress } from '../actions/task.action';
+import {
+  movefromcompleted,
+  movefromnextup,
+  movefromprogress,
+} from '../actions/task.action';
 
 const Column = ({ type, list }) => {
   const emptyBoxes = () => {
@@ -28,7 +31,6 @@ const Column = ({ type, list }) => {
   const dispatch = useDispatch();
 
   const moveCard = cardObj => {
-
     switch (cardObj.tasktype) {
       case 'nextUp':
         dispatch(movefromnextup(cardObj, type));
@@ -61,15 +63,15 @@ const Column = ({ type, list }) => {
           </div>
         );
       })}
-      {list.length < 3 ? (
-        emptyBoxes()
-      ) : (
-        <div className="emptybox dashedBorder"></div>
-      )}
+      {list.length < 3 ? emptyBoxes() : <div></div>}
 
       <div className="new dashedBorder">+</div>
     </div>
   );
 };
+
+{
+  /* <div className="emptybox dashedBorder"></div> */
+}
 
 export default Column;

@@ -1,11 +1,10 @@
-import {combineReducers} from 'redux'
-import chatReducres from './chat.reducer'
-import taskReducres from './task.reducers'
-
+import { combineReducers } from 'redux';
+import chatReducres from './chat.reducer';
+import taskReducres from './task.reducers';
 
 const rootReducer = combineReducers({
-    tasks: taskReducres,
-    chats: chatReducres,
-})
+  tasks: taskReducres,
+  chats: chatReducres,
+});
 
-export default rootReducer
+export default rootReducer;

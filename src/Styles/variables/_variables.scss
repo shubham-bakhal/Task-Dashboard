@@ -1,5 +1,24 @@
-$primary-color: #2D4ACD;
-$primary-light: #F3F5F7;
+$primary-color: #2d4acd;
+$primary-light: #f3f5f7;
 $light-grey: #999999;
-$font-color: #1E1E1E;
-$font-family:  'Poppins', sans-serif;
+$font-color: #1e1e1e;
+$red: #fd3534;
+$green: #28a174;
+$font-family: 'Poppins', sans-serif;
+
+$font-sm: 10px;
+$font-sm-md: 12px;
+$font-md: 14px;
+$font-md-lg: 16px;
+$font-lg: 18px;
+
+@mixin flexing {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+}
+
+@mixin customShadow {
+  box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}

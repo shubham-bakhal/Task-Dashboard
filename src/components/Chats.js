@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import more from '../assets/more.svg';
 import mic from '../assets/mic.svg';
-import '../Styles/css/chats.css';
 import Avatar from './Avatar';
 import { useDispatch, useSelector } from 'react-redux';
 import ChatContent from './ChatContent';
@@ -11,7 +10,6 @@ const Chats = () => {
   const chats = useSelector(state => state.chats);
   const [msg, setMsg] = useState('');
 
-  console.log(msg);
 
   const dispatch = useDispatch();
 
@@ -22,6 +20,11 @@ const Chats = () => {
     }
   };
 
+  const bottomAlways = useRef(null);
+  if (bottomAlways.current) {
+    bottomAlways.current.scrollTop =
+      bottomAlways.current.scrollHeight - bottomAlways.current.clientHeight;
+  }
   return (
     <div id="chats">
       <div className="chatsHeader">
@@ -45,7 +48,7 @@ const Chats = () => {
       </div>
       <div className="groupChat">
         <p>Group Chat</p>
-        <div className="allChats">
+        <div ref={bottomAlways} className="allChats">
           {chats.chats.map(chat => (
             <ChatContent
               key={chat.id}

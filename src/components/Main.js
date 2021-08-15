@@ -1,5 +1,4 @@
 import React from 'react';
-import '../Styles/css/main.css';
 import dailytask from '../assets/dailytask.png';
 import search from '../assets/search.svg';
 import notification from '../assets/notification.svg';
@@ -31,7 +30,7 @@ const Main = () => {
           </div>
 
           <img
-            src={chats.groupUser[chats.currentUserID - 1].profileurl}
+            src={chats.groupUser[chats.currentUserID].profileurl}
             alt=""
           />
         </div>

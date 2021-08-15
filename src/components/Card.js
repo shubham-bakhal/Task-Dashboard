@@ -6,10 +6,6 @@ import game from '../assets/game.png';
 import congo from '../assets/congo.png';
 import clock from '../assets/clock.svg';
 import more from '../assets/more.svg';
-import profile1 from '../assets/profile1.png';
-import profile2 from '../assets/profile2.png';
-import profile3 from '../assets/profile3.png';
-import '../Styles/css/card.css';
 
 import { useDrag } from 'react-dnd';
 import { useSelector } from 'react-redux';
@@ -47,7 +43,6 @@ const Card = ({ task }) => {
   }
 
   const chats = useSelector(state => state.chats);
-  console.log(chats.groupUser[1].profileurl);
 
   return (
     <div className={classs} ref={dragRef}>
@@ -65,16 +60,15 @@ const Card = ({ task }) => {
         </div>
         <div className="people">
           {task.userIDs.map(id => {
-            return <span className="avatar">
-            <img key={id} src={chats.groupUser[parseInt(id) - 1].profileurl} alt="dp" />
-            </span> ;
+            return (
+              <span key={id} className="avatar">
+                <img
+                  src={chats.groupUser[id - 1].profileurl}
+                  alt="dp"
+                />
+              </span>
+            );
           })}
-          {/* {task.userIDs.map(id => {
-            return <p>{parseInt}</p>;
-          })} */}
-
-          {/* <img src={profile2} alt="dp" />
-          <img src={profile3} alt="dp" /> */}
         </div>
       </div>
     </div>
