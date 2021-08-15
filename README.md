@@ -8,4 +8,4 @@
 
 #### Content
 >> Made up with  React and Redux
->> Drag and Drop functionality 
+>>  with Drag and Drop functionality 
